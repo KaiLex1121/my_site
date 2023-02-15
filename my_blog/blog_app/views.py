@@ -9,7 +9,7 @@ def show_mainpage(request):
 
 
 def show_blogpage(request):
-    return HttpResponse('Все посты блога')
+    return render(request, 'blog_app/posts.html')
 
 
 def show_post_by_name(request, post_name):
