@@ -54,4 +54,5 @@ def show_kianu_rivz_post(request):
 
 
 def show_post_by_number(request, post_number):
-    return HttpResponse(f'Информация о посте под номером {post_number}')
+
+    return render(request, 'blog_app/post_by_number.html', context={'post_number': post_number})
