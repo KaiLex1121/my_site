@@ -33,13 +33,13 @@ def show_post_by_name(request, post_name):
 
 def show_guinness_world_records(request):
 
-    context = {
+    context_data = {
         'power_man': 'Narve Laeret',
         'bar_name': "Bob’s BBQ & Grill",
         'count_needle': 1790,
     }
 
-    return render(request, 'blog_app/guinnes_records.html', context=context)
+    return render(request, 'blog_app/guinnes_records.html', context=context_data)
 
 
 def show_kianu_rivz_post(request):
