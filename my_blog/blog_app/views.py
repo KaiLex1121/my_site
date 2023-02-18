@@ -1,9 +1,11 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.template.loader import render_to_string
 
 
 def show_mainpage(request):
-    return HttpResponse('Главная страница')
+    response = render_to_string('blog_app/index.html')
+    return HttpResponse(response)
 
 
 def show_blogpage(request):
