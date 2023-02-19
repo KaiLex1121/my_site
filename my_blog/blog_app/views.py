@@ -13,7 +13,15 @@ def show_blogpage(request):
 
 
 def show_post_by_name(request, post_name):
-    return HttpResponse(f'Информация о посте {post_name}')
+
+    context_data = {
+        'year_born': 1964,
+        'city_born': 'Бейрут',
+        'movie_name': 'Матрица'
+    }
+
+    if post_name.lower() == 'киану_ривз':
+        return render(request, 'blog_app/kianu_rivz_post.html', context=context_data)
 
 
 def show_post_by_number(request, post_number):
