@@ -1,16 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'base.html' %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home page</title>
-</head>
 
-<body>
-    <h2>Главная страница</h2>
-    <h4>Добро пожаловать в мой блог</h4>
-</body>
+{% block left_column_content %}
 
-</html>
+    {% for dict in posts %}
+
+        <h2> {{ dict.title }} </h2>
+        <h5> {{ dict.description }}, {{ dict.date }} </h5>
+        <div class="fakeimg" style="height:200px;">Image</div>
+        <p> {{ dict.content }} </p>
+
+    {% endfor %}
+
+{% endblock %}

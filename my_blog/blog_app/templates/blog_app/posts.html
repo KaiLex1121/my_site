@@ -1,14 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Посты</title>
-</head>
-<body>
-    <h2>Список всех постов</h2>
+{% extends 'base.html' %}
 
-    <p>Здесь будут отображаться все посты блога</p>
-</body>
-</html>
+
+
+{% block left_column_content %}
+
+    {% for dict in posts %}
+
+        <h2> {{ dict.title }} </h2>
+        <h5> {{ dict.description }}, {{ dict.date }} </h5>
+        <div class="fakeimg" style="height:200px;">Image</div>
+        <p> {{ dict.content }} </p>
+
+    {% endfor %}
+
+{% endblock %}
