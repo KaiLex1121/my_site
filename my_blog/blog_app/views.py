@@ -88,10 +88,18 @@ def show_post_by_name(request, post_name):
     elif post_name == 'рекорды_гиннеса':
         response = reverse('guinnes_records')
 
+    elif post_name == 'красивая_табличка':
+        response = reverse('beautiful_table')
+
     if response is not None:
         return HttpResponseRedirect(response)
 
     return HttpResponse(f'Поста {post_name} пока не существует')
+
+
+def show_post_by_number(request, post_number):
+
+    return render(request, 'blog_app/post_by_number.html', context={'post_number': post_number})
 
 
 def show_guinness_world_records(request):
@@ -116,6 +124,6 @@ def show_kianu_rivz_post(request):
     return render(request, 'blog_app/kianu_rivz_post.html', context=context_data)
 
 
-def show_post_by_number(request, post_number):
+def show_beautiful_table(request):
 
-    return render(request, 'blog_app/post_by_number.html', context={'post_number': post_number})
+    return render(request, 'blog_app/beautiful_table.html')
